@@ -1,1 +1,2 @@
-﻿console.log("IoT Backend Service is running");
+﻿const appname = 10;
+console.log(appname);
