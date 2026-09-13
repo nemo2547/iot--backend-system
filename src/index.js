@@ -1,17 +1,18 @@
-﻿import express from 'express';
-import routes from './routes/routes.js';
+﻿import express from "express";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth.js";
+import deviceRoutes from "./routes/devices.js";
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('IoT Backend System is running!');
-});
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api", deviceRoutes);
 
-app.use('/api', routes);
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
