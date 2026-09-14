@@ -101,3 +101,16 @@ http://localhost:3000/api/auth/login post
 //   "password": "userpassword",
 //   "role": "viewer"
 // }
+
+build
+ docker build -t iot-api:latest .     
+build test
+docker run -p 3000:3000 iot-api:latest                                      
+
+รัน build
+docker-compose up --build    
+
+push ใหม่
+docker-compose exec api npx prisma db push 
+
+docker build -t iot-worker:latest -f Dockerfile.worker .     
