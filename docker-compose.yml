@@ -63,7 +63,7 @@ services:
       rabbitmq:
         condition: service_healthy # รอให้ RabbitMQ พร้อมใช้งานจริงๆ
     restart: always
-    
+
   # 5. Background Worker Service
   worker:
     build:
