@@ -13,3 +13,14 @@ services:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: iot-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP Protocol Port
+      - "15672:15672" # Web Management UI Port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    restart: always
