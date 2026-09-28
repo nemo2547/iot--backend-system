@@ -31,6 +31,7 @@ npm install
 docker-compose up -d
 
 # อัปเดต Schema และสร้างตารางใน PostgreSQL ด้วย Prisma
+npx prisma generate
 npx prisma db push
 
 
@@ -109,6 +110,12 @@ docker run -p 3000:3000 iot-api:latest
 
 รัน build
 docker-compose up --build    
+
+ดูlogdocker
+docker compose logs -f
+docker compose logs -f api
+docker compose logs -f worker
+docker compose logs -f rabbitmq
 
 push ใหม่
 docker-compose exec api npx prisma db push 
