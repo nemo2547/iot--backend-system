@@ -1,17 +1,11 @@
-﻿import express from 'express';
-import routes from './routes/routes.js';
+﻿import app from './app.js';
+import dotenv from 'dotenv';
+import { connectRabbitMQ } from './config/rabbitmq.js';
 
-const app = express();
+dotenv.config();
+connectRabbitMQ();
+
 const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('IoT Backend System is running!');
-});
-
-app.use('/api', routes);
-
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
