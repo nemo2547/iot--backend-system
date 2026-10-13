@@ -1,3 +1,4 @@
+/* global describe, test, expect */
 import { checkVoltageStatus } from '../utils/voltageChecker.js';
 
 describe('Voltage Checker Unit Tests (AAA Pattern)', () => {

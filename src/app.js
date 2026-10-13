@@ -9,5 +9,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api', deviceRoutes);
 app.use('/api', telemetryRoutes);
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Hello Sakon Nakhon Cloud!' });
+});
 
 export default app;
