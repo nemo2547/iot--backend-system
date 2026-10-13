@@ -31,7 +31,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/iot-api:latest
   deploy-to-server:
     needs: build-and-push
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Deploying via SSH
         uses: appleboy/ssh-action@v1.0.0
