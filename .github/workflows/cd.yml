@@ -28,9 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: |
-            nemo2547/iot-api:latest
-            nemo2547/iot-api:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/iot-api:latest
   deploy-to-server:
     needs: build-and-push
     runs-on: ubuntu-latest
