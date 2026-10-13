@@ -1,3 +1,4 @@
+/* global describe, test, expect, beforeEach */
 import { jest } from '@jest/globals';
 import bcrypt from 'bcrypt';
 

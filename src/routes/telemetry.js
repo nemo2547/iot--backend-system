@@ -5,8 +5,7 @@ const router = express.Router();
 
 router.post("/telemetry", async (req, res) => {
   try {
-    const { deviceId, voltage, temperature } = req.body;
-
+    const { deviceId,voltage } = req.body;
     // 1. (สมมุติ/บันทึก) บันทึกค่าลง Database...
     console.log(`[DB] Saved telemetry for ${deviceId}`);
 
